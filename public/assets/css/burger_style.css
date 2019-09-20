@@ -1,0 +1,36 @@
+body {
+  background-color: grey;
+}
+
+section {
+  margin: 10px;
+}
+
+h1 {
+  background-color: orange;
+}
+
+h2 {
+  background-color: lightblue;
+}
+
+/* h3 {
+  background-color: lightcoral;
+} */
+
+.burgers-to-devour {
+  background-color: aliceblue;
+}
+
+li {
+  background-color: lawngreen;
+}
+
+.burger-container {
+  margin: 10px;
+  padding: 10px;
+}
+
+#add-a-burger {
+  background-color: lightcoral;
+}

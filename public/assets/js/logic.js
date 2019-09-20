@@ -5,7 +5,8 @@ $(function() {
     var newBurger = {
       burger_name: $("#burger-name")
         .val()
-        .trim()
+        .trim(),
+      devoured: 0
     };
 
     $.ajax("/api/burgers/", {
@@ -18,7 +19,7 @@ $(function() {
   });
 
   // click a burger to eat it
-  $(".devour").on("click", function(event) {
+  $(".change-devoured").on("click", function(event) {
     var id = $(this).data("id");
     var devouredState = {
       devoured: 1
