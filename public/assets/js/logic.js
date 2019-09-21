@@ -14,22 +14,20 @@ $(function() {
       type: "POST",
       data: newBurger
     }).then(function(data) {
-
       console.log("adding a new burger");
-      
-      $("#burger-name").val() = "";
-      
+
+      $("#burger-name").val("");
+
       location.reload();
     });
   });
 
   // click a burger to eat it
   $(".toggle-devoured").on("click", function(event) {
-
     var id = $(this).data("id");
-    
+
     var newDevoured = $(this).data("newdevoured");
-        
+
     var newDevouredState = {
       devoured: newDevoured
     };
