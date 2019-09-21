@@ -18,7 +18,11 @@ h2 {
   background-color: lightcoral;
 } */
 
-.burgers-to-devour {
+#burgers-to-devour {
+  background-color: aliceblue;
+}
+
+#burgers-been-devoured {
   background-color: aliceblue;
 }
 

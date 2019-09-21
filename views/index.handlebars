@@ -1,37 +1,42 @@
-<section id="page-heading">
-    <h1>Burgers!</h1>
-</section>
+<div class="row">
+    <div class="col-12">
 
-<section id="add-a-burger">
-    <h3>Add a Burger</h3>
-    <form class="create-form">
-        <div class="form-group">
-            <label for="burger-name">Burger Name:</label>
-            <input class="form-control" type="text" id="burger-name" name="burger-name">
-        </div>
-        <button type="submit">Add Burger</button>
-    </form>
-</section>
+        <section id="page-heading">
+            <h1>Burgers!</h1>
+        </section>
 
-<section class="burgers-to-devour">
-    <h2>Burgers to Devour</h2>
-    {{!-- burgers = json array  --}}
-    <ol>
-        {{#each burgers}}
-        {{#unless devoured}}
-        {{> burgers/burger-block devoured=true}}
-        {{/unless}}
-        {{/each}}
-    </ol>
-</section>
+        <section id="add-a-burger">
+            <h3>Add a Burger</h3>
+            <form class="create-form">
+                <div class="form-group">
+                    <label for="burger-name">Burger Name:</label>
+                    <input class="form-control" type="text" id="burger-name" name="burger-name">
+                </div>
+                <button type="submit">Add Burger</button>
+            </form>
+        </section>
 
-<section id="burgers-been-devoured">
-    <h2>Burgers that have been devoured</h2>
-    <ul>
-        {{#each burgers}}
-        {{#if devoured}}
-        {{> burgers/burger-block devoured=false}}
-        {{/if}}
-        {{/each}}
-    </ul>
-</section>
+        <section id="burgers-to-devour">
+            <h2>Burgers to Devour</h2>
+            <ol>
+                {{#each burgers}}
+                {{#unless devoured}}
+                {{> burgers/burger-block isDevoured=true}}
+                {{/unless}}
+                {{/each}}
+            </ol>
+        </section>
+
+        <section id="burgers-been-devoured">
+            <h2>Burgers that have been devoured</h2>
+            <ol>
+                {{#each burgers}}
+                {{#if devoured}}
+                {{> burgers/burger-block isDevoured=false}}
+                {{/if}}
+                {{/each}}
+            </ol>
+        </section>
+
+    </div>
+</div>

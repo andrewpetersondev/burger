@@ -1,8 +1,12 @@
 <div class="burger-container">
     <li>
         {{burger_name}}
-        <button class="change-devoured" data-id="{{id}}" data-newdevoured="{{devoured}}">
-            {{#if devoured}}just ate!{{else}}you should eat{{/if}}
+        <button class="toggle-devoured" data-id="{{id}}" data-newdevoured="{{isDevoured}}">
+            {{#if isDevoured}}
+            just ate!
+            {{else}}
+            you should eat
+            {{/if}}
         </button>
         <button class="delete-burger" data-id="{{this.id}}">DELETE!</button>
     </li>

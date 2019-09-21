@@ -1,4 +1,5 @@
 $(function() {
+  // create a burger
   $(".create-form").on("submit", function(event) {
     event.preventDefault();
 
@@ -13,21 +14,32 @@ $(function() {
       type: "POST",
       data: newBurger
     }).then(function() {
+
       console.log("adding a new burger");
+      
+      $("#burger-name").val() = "";
+      
       location.reload();
     });
   });
 
   // click a burger to eat it
-  $(".change-devoured").on("click", function(event) {
+  $(".toggle-devoured").on("click", function(event) {
+
     var id = $(this).data("id");
-    var devouredState = {
-      devoured: 1
+    
+    var newDevoured = $(this).data("newdevoured");
+        
+    var newDevouredState = {
+      devoured: newDevoured
     };
 
+    // console.log(id);
+
+    // sends the put request
     $.ajax("/api/burgers/" + id, {
       type: "PUT",
-      data: devouredState
+      data: newDevouredState
     }).then(function() {
       console.log("burger devoured");
       location.reload();

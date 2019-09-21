@@ -9,14 +9,14 @@ var router = express.Router();
 
 // display all
 router.get("/", function(req, res) {
-  console.log("burgers controller router get");
+  // console.log("burgers controller router get");
 
   burger.selectAll(function(data) {
     var hbsObject = {
       burgers: data
     };
 
-    console.log("burgers controller router get burger selectAll");
+    // console.log("burgers controller router get burger selectAll");
     console.log("hbsObject", hbsObject);
 
     res.render("index", hbsObject);
@@ -25,7 +25,7 @@ router.get("/", function(req, res) {
 
 // toggle if burger is devoured
 router.post("/api/burgers", function(req, res) {
-  console.log("burgers controller router post");
+  // console.log("burgers controller router post");
 
   burger.insertOne(
     ["burger_name", "devoured"],
@@ -38,7 +38,7 @@ router.post("/api/burgers", function(req, res) {
 
 // Replaces all current representations of the target resource with the uploaded content
 router.put("/api/burgers/:id", function(req, res) {
-  console.log("burgers controller router put");
+  // console.log("burgers controller router put");
 
   var condition = "id = " + req.params.id;
 
