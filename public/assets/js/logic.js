@@ -13,7 +13,7 @@ $(function() {
     $.ajax("/api/burgers/", {
       type: "POST",
       data: newBurger
-    }).then(function() {
+    }).then(function(data) {
 
       console.log("adding a new burger");
       
